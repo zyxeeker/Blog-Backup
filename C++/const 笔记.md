@@ -1,6 +1,7 @@
 # const 笔记
 ## const
-`const` 定义某个变量为`常量`。因为常量在定义之后就不能被修改，所以定义的时候必须初始化 
+`const` 定义某个变量为`常量`。
+> **注意**：**因为常量在定义之后就不能被修改，所以定义的时候必须初始化 **
 
 `const` 对象默认为**文件的局部变量**，非`const` 变量默认为`extern`。加了`extern`以后才能作为全局变量
 
@@ -27,4 +28,52 @@
 
 非 `const` 引用只能绑定到与该引用类型相同的对象
 `const` 引用则可以绑定到不同但相关的类型的对象或绑定到右值
+
+## 指针
+### 指向 const 对象的指针
+C++ 中要求指向 `const` 对象的指针也必须具有 `const` 特性
+```c++
+	const double *cptr;
+```
+
+这里的 cptr 是指向 `double` 类型 `const` 对象的指针，**`const` 只是限定了 **cptr** 所指向的类型，而并非 **cptr** 本身**
+
+- 在定义的时候不需要初始化
+- 允许对 cptr 重新赋值，使其指向另一个 `const` 对象
+- 一旦 cptr 被定义就**不能通过它**修改其所指对象的值
+
+>**注意**：必须使用 `const void*` 类型的指针来保存 `const` 对象地址
+>```c++
+>const int universe = 42;
+>const void *cpv = &universe;
+>void *px = &universe;
+>```
+
+允许把非 `const` 对象的地址赋给指向 `const` 对象的指针
+
+>**注意**：不能使用指向 `const` 对象的指针修改基础对象，然而如果该指针指向的是一个非 `const` 对象，可用其他方法修改其所指对象的值
+
+### const 指针
+`const` 指针：*本身的值不能被修改*
+
+```c++
+	int errNumb = 0;
+	int *const curErr = &errNumb;
+```
+
+`const` 指针**必须初始化**
+
+### 指向 const 对象的 const 指针
+```c++
+	int ptr = 110;
+	const int *const pi_ptr = &ptr;
+```
+
+既不能修改 pi_ptr 所指对象的值，也不允许修改该指针的指向
+
+### 指针与 typedef
+```c++
+	typedef string *pstring;
+	const pstring str1;
+```
 
