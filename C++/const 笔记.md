@@ -1,4 +1,6 @@
 # const 笔记
+> 建议书写时将 `const` 放到类型后面从左往右读更加便于理解
+
 ## const
 `const` 定义某个变量为`常量`。
 > **注意**：**因为常量在定义之后就不能被修改，所以定义的时候必须初始化 **
@@ -70,10 +72,18 @@ C++ 中要求指向 `const` 对象的指针也必须具有 `const` 特性
 ```
 
 既不能修改 pi_ptr 所指对象的值，也不允许修改该指针的指向
+从右往左阅读：“pi_ptr 首先是一个 `const` 指针，指向 `double` 类型的 `const` 对象”
 
 ### 指针与 typedef
 ```c++
 	typedef string *pstring;
-	const pstring str1;
+	const pstring p_str;
 ```
+
+这里的 `const` 修饰的是 `pstring` ，实际上等价于
+```c++
+string *const p_str;
+```
+
+p_str 是一个指向 `string` 类型对象的 `const` 指针
 
