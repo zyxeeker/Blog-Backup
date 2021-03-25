@@ -87,3 +87,34 @@ string *const p_str;
 
 p_str 是一个指向 `string` 类型对象的 `const` 指针
 
+## const 与函数
+### const 形参
+```c++
+	void fcn(const int i);
+```
+
+尽管函数的形参是 `const`，但是编译器却将 fcn 中的形参视为普通的 `int` 型，目的是为了与 C 语言兼容，因为在 C 语言中，具有 `const` 形参或非 `const` 形参的函数无区别
+
+### 利用 const 引用避免复制
+如果使用引用形参的唯一目的是避免复制实参，则应该将形参定义为 `const` 引用
+
+### 更加灵活的指向 const 的引用
+应该将不修改相应的实参的形参定义为 `const` 引用。如果将这样的形参定义为非 `const` 引用，则毫无必要的限制了该函数的的使用。例如，可以编写下面的程序在一个 `string` 对象中查找一个指定的字符：
+```c++
+	string::size_tytpe find_char(string &s, char c) {
+		string::size_type i = 0;
+		while( i != s.szie() && s[i] != c)
+			++i;
+		return i;
+	}
+```
+
+尽管函数没有修改这个形参的值，但是这样的定义带来的问题是不能通过字符串字面值来调用这个函数：
+```c++
+	if (find_char("hello",'e'))
+```
+
+这样会导致编译失败
+
+所以应该将不需要修改的引用定义为 `const` 引用。普通的非 `const` 引用形参在使用的时候不太灵活。这样的形参既不能用 `const` 对象初始化，也不能用字面值或产生右值的引用的表达式实参初始化
+
