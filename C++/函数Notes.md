@@ -163,6 +163,7 @@ cout << s1.size() < s2.size() ? s1 : s2 << endl;
 `static` 成员不含有 `this` 指针
 
 #### const 成员函数（常量成员函数）
+默认情况下， `this` 类型是指向类类型非常量版本的常量指针（相当于 `Sales_item *const`）。如果函数是一个普通函数而且 `this` 是一个普通的指针参数，则应该声明成 *常量成员函数*，这样有助于提高函数的灵活性
 跟在成员函数后面的 `const` 改变了 `this` 形参的类型。`this` 将会变成指向当前对象 `const` 类类型的指针，例如：
 ```c++
 bool Sales_item::same_isbn(const Sales_item *const this, const Sales_item &rhs) const {
