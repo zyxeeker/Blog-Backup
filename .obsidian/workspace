@@ -82,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 289,
-    "collapsed": true
+    "width": 289
   },
   "lastOpenFiles": [
     "C++/顺序容器.md",
