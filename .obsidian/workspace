@@ -1,0 +1,100 @@
+{
+  "main": {
+    "id": "dda54ea3edbfc8e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "c648d8eb3875c878",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "C++/顺序容器.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b9085583cbf4cf82",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c47d99cb5f5f362",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46f488674faa2abb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "eed61b0ca4626814",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "line:(static)",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 309
+  },
+  "right": {
+    "id": "5d2c53515f33a9ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "9eac479af55229b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f38772d8939878ee",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "C++/顺序容器.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 289,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "C++/顺序容器.md",
+    "C++/Untitled 1.md",
+    "C++/类.md",
+    "C++/标准库类型.md",
+    "C++/const 笔记.md",
+    "C++/C 风格字符串与动态数组.md",
+    "C++/语句.md",
+    "C++/函数Notes.md",
+    "C++/多维数组Notes.md",
+    "C++/标准IO库.md"
+  ]
+}
